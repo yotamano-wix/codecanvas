@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Github, Loader2, Lock, ChevronRight } from "lucide-react";
+import { Github, Loader2, Lock, ChevronRight, Zap } from "lucide-react";
+
+const DEMO_REPOS = [
+  { name: "shadcn-ui/ui", default_branch: "main", description: "Beautifully designed components — Tailwind CSS & Radix UI" },
+  { name: "tailwindlabs/tailwindcss", default_branch: "main", description: "A utility-first CSS framework for rapid UI development" },
+  { name: "storybookjs/storybook", default_branch: "next", description: "Frontend workshop for building UI components and pages" },
+];
 
 export default function GitHubConnect({ onConnected }) {
   const [token, setToken] = useState("");
