@@ -21,6 +21,11 @@ export default function GitHubConnect({ onConnected }) {
   const [branch, setBranch] = useState("main");
   const [step, setStep] = useState("token"); // token | repos | config
 
+  const loadDemoRepos = () => {
+    setRepos(DEMO_REPOS);
+    setStep("repos");
+  };
+
   const loadRepos = async () => {
     if (!token) return;
     setLoading(true);
