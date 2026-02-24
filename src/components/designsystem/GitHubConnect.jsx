@@ -59,33 +59,55 @@ export default function GitHubConnect({ onConnected }) {
         </div>
 
         {step === "token" && (
-          <Card className="bg-white/5 border-white/10 text-white">
-            <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2"><Lock className="w-4 h-4" /> Connect GitHub</CardTitle>
-              <CardDescription className="text-slate-400">Enter a Personal Access Token with <code className="bg-white/10 px-1 rounded text-xs">repo</code> scope</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <Label className="text-slate-300">Personal Access Token</Label>
-                <Input
-                  type="password"
-                  placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
-                  value={token}
-                  onChange={e => setToken(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-slate-500"
-                  onKeyDown={e => e.key === "Enter" && loadRepos()}
-                />
-                <p className="text-xs text-slate-500">
-                  Create one at <a href="https://github.com/settings/tokens" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">github.com/settings/tokens</a>
-                </p>
-              </div>
-              {error && <p className="text-red-400 text-sm">{error}</p>}
-              <Button onClick={loadRepos} disabled={!token || loading} className="w-full bg-white text-slate-900 hover:bg-slate-100">
-                {loading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
-                Browse Repositories
-              </Button>
-            </CardContent>
-          </Card>
+          <div className="space-y-4">
+            {/* Demo Option */}
+            <Card className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-blue-500/30 text-white cursor-pointer hover:border-blue-400/50 transition-all" onClick={loadDemoRepos}>
+              <CardContent className="p-4 flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center shrink-0">
+                  <Zap className="w-5 h-5 text-blue-400" />
+                </div>
+                <div className="flex-1">
+                  <div className="font-semibold text-white text-sm">Try Demo (No Token Needed)</div>
+                  <div className="text-xs text-slate-400 mt-0.5">Explore public repos like shadcn/ui, Tailwind CSS, Storybook</div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-blue-400" />
+              </CardContent>
+            </Card>
+
+            <div className="flex items-center gap-3">
+              <div className="flex-1 h-px bg-white/10" />
+              <span className="text-xs text-slate-500">or connect your own repos</span>
+              <div className="flex-1 h-px bg-white/10" />
+            </div>
+
+            <Card className="bg-white/5 border-white/10 text-white">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2"><Lock className="w-4 h-4" /> Connect GitHub</CardTitle>
+                <CardDescription className="text-slate-400">Enter a Personal Access Token with <code className="bg-white/10 px-1 rounded text-xs">repo</code> scope</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label className="text-slate-300">Personal Access Token</Label>
+                  <Input
+                    type="password"
+                    placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+                    value={token}
+                    onChange={e => setToken(e.target.value)}
+                    className="bg-white/10 border-white/20 text-white placeholder:text-slate-500"
+                    onKeyDown={e => e.key === "Enter" && loadRepos()}
+                  />
+                  <p className="text-xs text-slate-500">
+                    Create one at <a href="https://github.com/settings/tokens" target="_blank" rel="noreferrer" className="text-blue-400 hover:underline">github.com/settings/tokens</a>
+                  </p>
+                </div>
+                {error && <p className="text-red-400 text-sm">{error}</p>}
+                <Button onClick={loadRepos} disabled={!token || loading} className="w-full bg-white text-slate-900 hover:bg-slate-100">
+                  {loading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : null}
+                  Browse Repositories
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         )}
 
         {step === "repos" && (
