@@ -8,9 +8,9 @@ Deno.serve(async (req) => {
 
     const { action, token, repo, path, branch = 'main' } = await req.json();
     const headers = {
-      'Authorization': `token ${token}`,
       'Accept': 'application/vnd.github.v3+json',
-      'User-Agent': 'DesignSystemVisualizer'
+      'User-Agent': 'DesignSystemVisualizer',
+      ...(token ? { 'Authorization': `token ${token}` } : {})
     };
 
     if (action === 'list_repos') {
