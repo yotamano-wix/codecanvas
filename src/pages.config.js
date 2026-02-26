@@ -48,10 +48,12 @@
  * The mainPage value must match a key in the PAGES object exactly.
  */
 import DesignSystemVisualizer from './pages/DesignSystemVisualizer';
+import About from './pages/About';
 
 
 export const PAGES = {
     "DesignSystemVisualizer": DesignSystemVisualizer,
+    "About": About,
 }
 
 export const pagesConfig = {
