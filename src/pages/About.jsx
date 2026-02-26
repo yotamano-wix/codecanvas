@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Palette, Github, Code2, Layers, Zap, Eye, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Palette, Github, Code2, Layers, Zap, Eye, CheckCircle2, ArrowLeft } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 
 const features = [
@@ -51,12 +52,26 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      {/* Nav */}
+      <nav className="flex items-center gap-4 px-6 py-4 max-w-4xl mx-auto">
+        <Link to="/" className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-white transition-colors">
+          <ArrowLeft className="w-4 h-4" />
+          Back
+        </Link>
+        <div className="flex items-center gap-2 ml-2">
+          <div className="w-6 h-6 rounded bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center">
+            <Palette className="w-3.5 h-3.5 text-white" />
+          </div>
+          <span className="font-semibold text-sm">CodeCanvas</span>
+        </div>
+      </nav>
+
       {/* Hero */}
-      <div className="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center">
-        <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 mb-6">
+      <div className="max-w-4xl mx-auto px-6 pt-12 pb-16 text-center">
+        <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 mb-6">
           <Palette className="w-7 h-7 text-white" />
         </div>
-        <h1 className="text-4xl font-bold mb-4">DesignScope</h1>
+        <h1 className="text-4xl font-bold mb-4">CodeCanvas</h1>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
           A powerful design system explorer that connects directly to your GitHub repositories, 
           letting you browse components, extract design tokens, and visualize your UI building blocks — all in one place.
@@ -74,8 +89,8 @@ export default function About() {
                 key={feature.title}
                 className="bg-slate-900 border border-white/10 rounded-xl p-5 hover:border-white/20 transition-colors"
               >
-                <div className="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4">
-                  <Icon className="w-4.5 h-4.5 text-blue-400" />
+                <div className="w-9 h-9 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4">
+                  <Icon className="w-4.5 h-4.5 text-emerald-400" />
                 </div>
                 <h3 className="font-semibold text-sm mb-2">{feature.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{feature.description}</p>
@@ -104,7 +119,7 @@ export default function About() {
                   placeholder="Your name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors"
                 />
                 <input
                   type="email"
@@ -112,12 +127,12 @@ export default function About() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                  className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition-opacity"
+                  className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:opacity-90 disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition-opacity"
                 >
                   {loading ? "Submitting..." : "Join Waitlist"}
                 </button>
