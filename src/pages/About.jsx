@@ -84,6 +84,48 @@ export default function About() {
           })}
         </div>
       </div>
+
+      {/* Waitlist */}
+      <div className="max-w-xl mx-auto px-6 pb-24 text-center">
+        <div className="bg-slate-900 border border-white/10 rounded-2xl p-8">
+          {submitted ? (
+            <div className="flex flex-col items-center gap-3">
+              <CheckCircle2 className="w-10 h-10 text-green-400" />
+              <h3 className="text-lg font-semibold">You're on the list!</h3>
+              <p className="text-slate-400 text-sm">We'll reach out when there's news. Thanks for your interest.</p>
+            </div>
+          ) : (
+            <>
+              <h2 className="text-xl font-bold mb-2">Join the Waitlist</h2>
+              <p className="text-slate-400 text-sm mb-6">Be the first to know about updates and new features.</p>
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                />
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="w-full bg-slate-800 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:opacity-90 disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition-opacity"
+                >
+                  {loading ? "Submitting..." : "Join Waitlist"}
+                </button>
+              </form>
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
