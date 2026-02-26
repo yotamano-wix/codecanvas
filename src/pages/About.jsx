@@ -102,7 +102,7 @@ export default function About() {
 
       {/* Waitlist */}
       <div className="max-w-xl mx-auto px-6 pb-24 text-center">
-        <div className="bg-white rounded-2xl p-8">
+        <div className="bg-red-950/40 border border-red-500/30 rounded-2xl p-8">
           {submitted ? (
             <div className="flex flex-col items-center gap-3">
               <CheckCircle2 className="w-10 h-10 text-green-400" />
@@ -111,15 +111,15 @@ export default function About() {
             </div>
           ) : (
             <>
-              <h2 className="text-3xl font-bold mb-2 text-slate-900">Join the Waitlist</h2>
-              <p className="text-slate-500 text-sm mb-6">Be the first to know about updates and new features.</p>
+              <h2 className="text-3xl font-bold mb-2">Join the Waitlist</h2>
+              <p className="text-slate-400 text-sm mb-6">Be the first to know about updates and new features.</p>
               <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 <input
                   type="text"
                   placeholder="Your name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-slate-100 border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 transition-colors"
+                  className="w-full bg-red-950/30 border border-red-500/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500 transition-colors"
                 />
                 <input
                   type="email"
@@ -127,12 +127,12 @@ export default function About() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full bg-slate-100 border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 transition-colors"
+                  className="w-full bg-red-950/30 border border-red-500/20 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-red-500 transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:opacity-90 disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition-opacity"
+                  className="w-full bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition-colors"
                 >
                   {loading ? "Submitting..." : "Join Waitlist"}
                 </button>
