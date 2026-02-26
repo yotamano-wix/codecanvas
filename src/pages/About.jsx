@@ -102,7 +102,7 @@ export default function About() {
 
       {/* Waitlist */}
       <div className="max-w-xl mx-auto px-6 pb-24 text-center">
-        <div className="bg-slate-900 border border-white/10 rounded-2xl p-8">
+        <div className="bg-white rounded-2xl p-8">
           {submitted ? (
             <div className="flex flex-col items-center gap-3">
               <CheckCircle2 className="w-10 h-10 text-green-400" />

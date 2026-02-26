@@ -59,6 +59,6 @@ export const PAGES = {
 }
 
 export const pagesConfig = {
-    mainPage: "Landing",
+    mainPage: "DesignSystemVisualizer",
     Pages: PAGES,
 };
