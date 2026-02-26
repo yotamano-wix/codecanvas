@@ -49,14 +49,16 @@
  */
 import About from './pages/About';
 import DesignSystemVisualizer from './pages/DesignSystemVisualizer';
+import Landing from './pages/Landing';
 
 
 export const PAGES = {
     "About": About,
     "DesignSystemVisualizer": DesignSystemVisualizer,
+    "Landing": Landing,
 }
 
 export const pagesConfig = {
-    mainPage: "DesignSystemVisualizer",
+    mainPage: "Landing",
     Pages: PAGES,
 };
