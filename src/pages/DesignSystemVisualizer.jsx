@@ -74,7 +74,7 @@ export default function DesignSystemVisualizer() {
           <div className="w-6 h-6 rounded bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
             <Palette className="w-3.5 h-3.5 text-white" />
           </div>
-          <span className="font-semibold text-sm">Design System Visualizer</span>
+          <span className="font-semibold text-sm">DesignScope</span>
         </div>
         <ChevronRight className="w-4 h-4 text-slate-600" />
         <div className="flex items-center gap-2">
