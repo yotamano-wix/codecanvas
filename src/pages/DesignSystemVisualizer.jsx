@@ -71,10 +71,10 @@ export default function DesignSystemVisualizer() {
       {/* Header */}
       <header className="flex items-center gap-4 px-4 py-3 border-b border-white/10 bg-slate-900 shrink-0">
         <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+          <div className="w-6 h-6 rounded bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center">
             <Palette className="w-3.5 h-3.5 text-white" />
           </div>
-          <span className="font-semibold text-sm">DesignScope</span>
+          <span className="font-semibold text-sm">CodeCanvas</span>
         </div>
         <ChevronRight className="w-4 h-4 text-slate-600" />
         <div className="flex items-center gap-2">
