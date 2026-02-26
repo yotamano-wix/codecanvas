@@ -36,6 +36,19 @@ const features = [
 ];
 
 export default function About() {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    await base44.entities.WaitlistEntry.create({ email, name });
+    setSubmitted(true);
+    setLoading(false);
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       {/* Hero */}
