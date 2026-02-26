@@ -1,4 +1,6 @@
-import { Palette, Github, Code2, Layers, Zap, Eye } from "lucide-react";
+import { useState } from "react";
+import { Palette, Github, Code2, Layers, Zap, Eye, CheckCircle2 } from "lucide-react";
+import { base44 } from "@/api/base44Client";
 
 const features = [
   {
