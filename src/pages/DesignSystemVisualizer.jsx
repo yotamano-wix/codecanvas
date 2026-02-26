@@ -5,8 +5,9 @@ import FileExplorer from "../components/designsystem/FileExplorer";
 import CodeViewer from "../components/designsystem/CodeViewer";
 import TokensPanel from "../components/designsystem/TokensPanel";
 import ComponentCanvas from "../components/designsystem/ComponentCanvas";
-import { Loader2, Github, LogOut, Palette, Code2, Layers, ChevronRight } from "lucide-react";
+import { Loader2, Github, LogOut, Palette, Code2, Layers, ChevronRight, Info } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const TABS = [
   { id: "canvas", label: "Canvas", icon: Layers },
@@ -86,6 +87,9 @@ export default function DesignSystemVisualizer() {
           {selectedFile && (
             <span className="text-xs text-slate-500 font-mono truncate max-w-xs">{selectedFile}</span>
           )}
+          <Link to="/About" className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors">
+            <Info className="w-3.5 h-3.5" /> About
+          </Link>
           <button onClick={disconnect} className="flex items-center gap-1.5 text-xs text-slate-500 hover:text-slate-300 transition-colors">
             <LogOut className="w-3.5 h-3.5" /> Disconnect
           </button>
