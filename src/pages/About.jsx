@@ -111,8 +111,8 @@ export default function About() {
             </div>
           ) : (
             <>
-              <h2 className="text-3xl font-bold mb-2">Join the Waitlist</h2>
-              <p className="text-slate-400 text-sm mb-6">Be the first to know about updates and new features.</p>
+              <h2 className="text-3xl font-bold mb-2 text-slate-900">Join the Waitlist</h2>
+              <p className="text-slate-500 text-sm mb-6">Be the first to know about updates and new features.</p>
               <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                 <input
                   type="text"
