@@ -66,10 +66,9 @@ export default function Landing() {
         </div>
 
         <h1 className="text-5xl sm:text-6xl font-bold tracking-tight leading-[1.1] mb-6">
-          Build Beautiful Interfaces
-          <br />
+          Build{" "}
           <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
-            directly from GitHub
+            Beautiful Interfaces
           </span>
         </h1>
 
