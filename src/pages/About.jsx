@@ -91,7 +91,7 @@ export default function About() {
         <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-amber-400 mb-6">
           <Palette className="w-7 h-7 text-white" />
         </div>
-        <h1 className="text-4xl font-bold mb-4">CodeCanvas</h1>
+        <h1 className="text-4xl font-bold mb-4">About Us</h1>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
           A powerful design system explorer that connects directly to your GitHub repositories, 
           letting you browse components, extract design tokens, and visualize your UI building blocks — all in one place.
