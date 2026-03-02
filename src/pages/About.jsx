@@ -62,12 +62,30 @@ export default function About() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [contactName, setContactName] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactMessage, setContactMessage] = useState("");
+  const [contactSubmitted, setContactSubmitted] = useState(false);
+  const [contactLoading, setContactLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     await base44.entities.WaitlistEntry.create({ email, name });
     setSubmitted(true);
     setLoading(false);
+  };
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setContactLoading(true);
+    await base44.integrations.Core.SendEmail({
+      to: "hello@codecanvas.app",
+      subject: `Contact from ${contactName}`,
+      body: `From: ${contactName} <${contactEmail}>\n\n${contactMessage}`,
+    });
+    setContactSubmitted(true);
+    setContactLoading(false);
   };
 
   return (
