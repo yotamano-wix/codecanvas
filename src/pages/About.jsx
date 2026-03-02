@@ -148,6 +148,56 @@ export default function About() {
         </div>
       </div>
 
+      {/* Contact Form */}
+      <div className="max-w-xl mx-auto px-6 pb-20">
+        <h2 className="text-sm font-semibold text-amber-400/70 uppercase tracking-widest mb-3 text-center">Contact</h2>
+        <h3 className="text-2xl font-bold text-center mb-8">Get in Touch</h3>
+        <div className="bg-slate-900/60 border border-green-500/10 rounded-2xl p-8">
+          {contactSubmitted ? (
+            <div className="flex flex-col items-center gap-3 py-4">
+              <CheckCircle2 className="w-10 h-10 text-green-400" />
+              <p className="text-white font-semibold">Message sent!</p>
+              <p className="text-slate-400 text-sm text-center">Thanks for reaching out. We'll get back to you soon.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleContactSubmit} className="flex flex-col gap-3">
+              <input
+                type="text"
+                placeholder="Your name"
+                value={contactName}
+                onChange={(e) => setContactName(e.target.value)}
+                required
+                className="w-full bg-slate-800/60 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
+              />
+              <input
+                type="email"
+                placeholder="Your email"
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
+                required
+                className="w-full bg-slate-800/60 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors"
+              />
+              <textarea
+                placeholder="Your message"
+                value={contactMessage}
+                onChange={(e) => setContactMessage(e.target.value)}
+                required
+                rows={4}
+                className="w-full bg-slate-800/60 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors resize-none"
+              />
+              <button
+                type="submit"
+                disabled={contactLoading}
+                className="w-full bg-gradient-to-r from-green-600 to-amber-500 hover:opacity-90 disabled:opacity-50 text-white font-semibold rounded-lg py-2.5 text-sm transition-opacity flex items-center justify-center gap-2"
+              >
+                <Send className="w-4 h-4" />
+                {contactLoading ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+
       {/* Waitlist */}
       <div className="max-w-xl mx-auto px-6 pb-24 text-center">
         <div className="bg-green-950/40 border border-amber-400/20 rounded-2xl p-8">
