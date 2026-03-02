@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Palette, Github, Layers, CheckCircle2, ArrowLeft, ChevronDown, Send } from "lucide-react";
+import { Palette, Github, Layers, CheckCircle2, ArrowLeft, ChevronDown, Quote, Send } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 
 const features = [
@@ -13,6 +13,27 @@ const features = [
     icon: Layers,
     title: "Component Canvas",
     description: "Visualize and explore individual components in isolation, making it easy to understand your design system's building blocks.",
+  },
+];
+
+const testimonials = [
+  {
+    name: "Sarah Chen",
+    role: "Lead Designer at Vercel",
+    quote: "CodeCanvas transformed how our team audits design systems. We cut our token review time in half.",
+    avatar: "SC",
+  },
+  {
+    name: "Marcus Johnson",
+    role: "Frontend Engineer at Stripe",
+    quote: "The component canvas is a game-changer. I can finally explore our UI library without spinning up the whole app.",
+    avatar: "MJ",
+  },
+  {
+    name: "Priya Patel",
+    role: "Design Systems Lead at Shopify",
+    quote: "We adopted CodeCanvas across all our teams. The GitHub integration makes onboarding new developers effortless.",
+    avatar: "PP",
   },
 ];
 
@@ -135,6 +156,31 @@ export default function About() {
               </div>
             );
           })}
+        </div>
+      </div>
+
+      {/* Testimonials */}
+      <div className="max-w-4xl mx-auto px-6 pb-20">
+        <h2 className="text-sm font-semibold text-amber-400/70 uppercase tracking-widest mb-8 text-center">What People Are Saying</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          {testimonials.map((t) => (
+            <div
+              key={t.name}
+              className="bg-slate-900 border border-green-500/15 rounded-xl p-5 hover:border-amber-400/30 transition-colors flex flex-col"
+            >
+              <Quote className="w-5 h-5 text-amber-400/40 mb-3" />
+              <p className="text-slate-300 text-sm leading-relaxed flex-1">"{t.quote}"</p>
+              <div className="flex items-center gap-3 mt-4 pt-4 border-t border-slate-800">
+                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-500 to-amber-400 flex items-center justify-center text-xs font-bold text-white">
+                  {t.avatar}
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-white">{t.name}</p>
+                  <p className="text-xs text-slate-500">{t.role}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
