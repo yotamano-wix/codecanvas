@@ -218,7 +218,7 @@ export default function About() {
         </div>
       </div>
 
-      <p className="text-center text-xs text-slate-600 pb-8">Last updated: February 2026</p>
+      <p className="text-center text-xs text-slate-600 pb-8">Powered by React and Vite</p>
     </div>
   );
 }
