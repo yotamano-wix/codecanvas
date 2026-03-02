@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Palette, Github, Layers, CheckCircle2, ArrowLeft, ChevronDown } from "lucide-react";
+import { Palette, Github, Layers, CheckCircle2, ArrowLeft, ChevronDown, Send } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 
 const features = [
