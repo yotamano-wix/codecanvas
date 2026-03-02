@@ -81,7 +81,7 @@ export default function Landing() {
         <div className="flex items-center justify-center gap-4">
           <Button asChild size="lg">
             <Link to="/DesignSystemVisualizer">
-              Get Started <ArrowRight className="w-4 h-4 ml-1" />
+              Get Started Free <ArrowRight className="w-4 h-4 ml-1" />
             </Link>
           </Button>
           <Button asChild variant="outline" size="lg">
