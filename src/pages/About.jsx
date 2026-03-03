@@ -75,6 +75,18 @@ const faqs = [
     question: "Can I use CodeCanvas with a private repository?",
     answer: "Yes. After authorizing with GitHub, you can explore any repository you have access to, including private and organization-owned repos.",
   },
+  {
+    question: "Can I export design tokens?",
+    answer: "Absolutely. CodeCanvas lets you export extracted design tokens in multiple formats including JSON, CSS custom properties, and SCSS variables. You can also configure custom export templates to match your team's workflow.",
+  },
+  {
+    question: "Does it work with monorepos?",
+    answer: "Yes. CodeCanvas fully supports monorepo structures. You can navigate between packages, explore shared component libraries, and extract tokens across multiple workspaces within a single repository.",
+  },
+  {
+    question: "Is there a VS Code extension?",
+    answer: "Yes! Our official VS Code extension brings CodeCanvas features directly into your editor. You can browse design tokens, preview components, and jump between your code and the CodeCanvas dashboard without leaving VS Code.",
+  },
 ];
 
 function FAQItem({ question, answer }) {
