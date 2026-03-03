@@ -37,6 +37,27 @@ const testimonials = [
   },
 ];
 
+const teamMembers = [
+  {
+    name: "Alex Chen",
+    role: "CEO",
+    initials: "AC",
+    bio: "Former engineering lead at GitHub with a passion for developer tools and open-source ecosystems.",
+  },
+  {
+    name: "Maria Santos",
+    role: "CTO",
+    initials: "MS",
+    bio: "Full-stack architect who previously built design infrastructure at Figma. Obsessed with performance and developer experience.",
+  },
+  {
+    name: "James Kim",
+    role: "Head of Design",
+    initials: "JK",
+    bio: "Design systems veteran who led visual language efforts at Airbnb. Believes great tools should feel invisible.",
+  },
+];
+
 const faqs = [
   {
     question: "How do I connect my GitHub repository?",
@@ -161,6 +182,26 @@ export default function About() {
                   <p className="text-xs text-slate-500">{t.role}</p>
                 </div>
               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Team */}
+      <div className="max-w-4xl mx-auto px-6 pb-20">
+        <h2 className="text-sm font-semibold text-blue-400/70 uppercase tracking-widest mb-8 text-center">Meet the Team</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          {teamMembers.map((member) => (
+            <div
+              key={member.name}
+              className="bg-slate-900 border border-blue-500/15 rounded-xl p-5 hover:border-blue-400/30 transition-colors text-center"
+            >
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-sm font-bold text-white mx-auto mb-4">
+                {member.initials}
+              </div>
+              <h3 className="font-semibold text-sm text-white">{member.name}</h3>
+              <p className="text-xs text-blue-400 mb-3">{member.role}</p>
+              <p className="text-slate-400 text-sm leading-relaxed">{member.bio}</p>
             </div>
           ))}
         </div>
