@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Palette, Github, Layers, CheckCircle2, ArrowLeft, ChevronDown, Quote } from "lucide-react";
+import { Palette, Github, Layers, CheckCircle2, ArrowLeft, ChevronDown, Quote, Figma, Triangle } from "lucide-react";
 import { base44 } from "@/api/base44Client";
 
 const features = [
@@ -55,6 +55,24 @@ const teamMembers = [
     role: "Head of Design",
     initials: "JK",
     bio: "Design systems veteran who led visual language efforts at Airbnb. Believes great tools should feel invisible.",
+  },
+];
+
+const partners = [
+  {
+    name: "GitHub",
+    icon: Github,
+    description: "Seamless repository integration for browsing code and extracting design tokens.",
+  },
+  {
+    name: "Figma",
+    icon: Figma,
+    description: "Bridge the gap between design files and live component implementations.",
+  },
+  {
+    name: "Vercel",
+    icon: Triangle,
+    description: "Deploy and preview your design system documentation in seconds.",
   },
 ];
 
@@ -216,6 +234,28 @@ export default function About() {
               <p className="text-slate-400 text-sm leading-relaxed">{member.bio}</p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* Partners */}
+      <div className="max-w-4xl mx-auto px-6 pb-20">
+        <h2 className="text-sm font-semibold text-blue-400/70 uppercase tracking-widest mb-8 text-center">Partners</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          {partners.map((partner) => {
+            const Icon = partner.icon;
+            return (
+              <div
+                key={partner.name}
+                className="bg-slate-900 border border-blue-500/15 rounded-xl p-6 hover:border-blue-400/30 transition-colors text-center"
+              >
+                <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-4">
+                  <Icon className="w-6 h-6 text-blue-400" />
+                </div>
+                <h3 className="font-semibold text-sm text-white mb-2">{partner.name}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{partner.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
 
