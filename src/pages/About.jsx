@@ -20,7 +20,7 @@ const testimonials = [
   {
     name: "Sarah Chen",
     role: "Lead Designer at Vercel",
-    quote: "CodeCanvas transformed how our team audits design systems. We cut our token review time in half.",
+    quote: "DesignScope transformed how our team audits design systems. We cut our token review time in half.",
     avatar: "SC",
   },
   {
@@ -32,7 +32,7 @@ const testimonials = [
   {
     name: "Priya Patel",
     role: "Design Systems Lead at Shopify",
-    quote: "We adopted CodeCanvas across all our teams. The GitHub integration makes onboarding new developers effortless.",
+    quote: "We adopted DesignScope across all our teams. The GitHub integration makes onboarding new developers effortless.",
     avatar: "PP",
   },
 ];
@@ -65,27 +65,27 @@ const faqs = [
   },
   {
     question: "What file types are supported for design token extraction?",
-    answer: "CodeCanvas supports CSS, SCSS, Less, JSON token files, and JavaScript/TypeScript theme configurations. We automatically detect and parse design variables from these formats.",
+    answer: "DesignScope supports CSS, SCSS, Less, JSON token files, and JavaScript/TypeScript theme configurations. We automatically detect and parse design variables from these formats.",
   },
   {
     question: "Is my source code stored on your servers?",
-    answer: "No. CodeCanvas reads your repository contents on-demand via the GitHub API. We never store or cache your source code on our servers.",
+    answer: "No. DesignScope reads your repository contents on-demand via the GitHub API. We never store or cache your source code on our servers.",
   },
   {
-    question: "Can I use CodeCanvas with a private repository?",
+    question: "Can I use DesignScope with a private repository?",
     answer: "Yes. After authorizing with GitHub, you can explore any repository you have access to, including private and organization-owned repos.",
   },
   {
     question: "Can I export design tokens?",
-    answer: "Absolutely. CodeCanvas lets you export extracted design tokens in multiple formats including JSON, CSS custom properties, and SCSS variables. You can also configure custom export templates to match your team's workflow.",
+    answer: "Absolutely. DesignScope lets you export extracted design tokens in multiple formats including JSON, CSS custom properties, and SCSS variables. You can also configure custom export templates to match your team's workflow.",
   },
   {
     question: "Does it work with monorepos?",
-    answer: "Yes. CodeCanvas fully supports monorepo structures. You can navigate between packages, explore shared component libraries, and extract tokens across multiple workspaces within a single repository.",
+    answer: "Yes. DesignScope fully supports monorepo structures. You can navigate between packages, explore shared component libraries, and extract tokens across multiple workspaces within a single repository.",
   },
   {
     question: "Is there a VS Code extension?",
-    answer: "Yes! Our official VS Code extension brings CodeCanvas features directly into your editor. You can browse design tokens, preview components, and jump between your code and the CodeCanvas dashboard without leaving VS Code.",
+    answer: "Yes! Our official VS Code extension brings DesignScope features directly into your editor. You can browse design tokens, preview components, and jump between your code and the DesignScope dashboard without leaving VS Code.",
   },
 ];
 
@@ -136,7 +136,7 @@ export default function About() {
           <div className="w-6 h-6 rounded bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
             <Palette className="w-3.5 h-3.5 text-white" />
           </div>
-          <span className="font-semibold text-sm">CodeCanvas</span>
+          <span className="font-semibold text-sm">DesignScope</span>
         </div>
       </nav>
 
@@ -145,9 +145,9 @@ export default function About() {
         <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 mb-6">
           <Palette className="w-7 h-7 text-white" />
         </div>
-        <h1 className="text-4xl font-bold mb-4">About CodeCanvas Platform</h1>
+        <h1 className="text-4xl font-bold mb-4">About DesignScope Platform</h1>
         <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          A powerful design system explorer that connects directly to your GitHub repositories, 
+          DesignScope helps teams build better products by connecting directly to your GitHub repositories, 
           letting you browse components, extract design tokens, and visualize your UI building blocks — all in one place.
         </p>
       </div>
