@@ -207,6 +207,46 @@ export default function About() {
         </div>
       </div>
 
+      {/* Pricing */}
+      <div className="max-w-4xl mx-auto px-6 pb-20">
+        <h2 className="text-sm font-semibold text-blue-400/70 uppercase tracking-widest mb-8 text-center">Pricing</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          {/* Free tier */}
+          <div className="bg-slate-900 border border-blue-500/15 rounded-xl p-6 flex flex-col">
+            <h3 className="text-lg font-bold text-white mb-1">Free</h3>
+            <p className="text-3xl font-bold text-white mb-6">$0<span className="text-sm font-normal text-slate-400">/month</span></p>
+            <ul className="flex flex-col gap-3 flex-1">
+              {["3 repositories", "Basic token extraction", "Community support"].map((item) => (
+                <li key={item} className="flex items-center gap-2.5 text-sm text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <button className="mt-6 w-full border border-blue-500/30 hover:border-blue-400/50 text-white font-semibold rounded-lg py-2.5 text-sm transition-colors">
+              Get Started
+            </button>
+          </div>
+          {/* Pro tier */}
+          <div className="bg-slate-900 border border-cyan-400/30 rounded-xl p-6 flex flex-col relative overflow-hidden">
+            <div className="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 text-xs font-semibold text-white">Pro</div>
+            <h3 className="text-lg font-bold text-white mb-1">Pro</h3>
+            <p className="text-3xl font-bold text-white mb-6">$12<span className="text-sm font-normal text-slate-400">/month</span></p>
+            <ul className="flex flex-col gap-3 flex-1">
+              {["Unlimited repositories", "Full token analysis", "Priority support"].map((item) => (
+                <li key={item} className="flex items-center gap-2.5 text-sm text-slate-300">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <button className="mt-6 w-full bg-gradient-to-r from-blue-600 to-cyan-500 hover:opacity-90 text-white font-semibold rounded-lg py-2.5 text-sm transition-opacity">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* FAQ */}
       <div className="max-w-2xl mx-auto px-6 pb-20">
         <h2 className="text-sm font-semibold text-blue-400/70 uppercase tracking-widest mb-8 text-center">Frequently Asked Questions</h2>
